@@ -1,0 +1,261 @@
+<!--
+ * AyagawaSeirin's Page
+ * Last Update: 2020-02-05
+ * GitHub: https://github.com/AyagawaSeirin/
+ * Made with love by AyagawaSeirin [https://qwq.best/]
+ * 此个人主页运行于GithubPages，如果你也想使用，在我的公开仓库内即可找到源码。您可以任意修改，但请注明本原作者。
+-->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>动态页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="mdui/css/mdui.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/detaile.css">
+    <!-- <link rel="stylesheet" href="/assets/css/detaile.css"> -->
+	<link rel="stylesheet" href="dist/APlayer.min.css">
+    <!--<link rel="stylesheet" href="https://at.alicdn.com/t/font_1625701_yqfsv6kz1w9.css">-->
+    <link rel="icon" href="assets/img/GRE4u.png">
+	<script src="assets/js/zone.js"></script>
+	<style>
+	body,td,th {
+	cursor:url("assets/img/GRULh.png"),auto;}
+		a:hover{color:gray;cursor:url("assets/img/GRULh.png"),auto;}}
+		a:active{color:darkgray}
+		a:link{color:white}
+		a:visited{color:white}
+</style>
+</head>
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink" height="100%">
+<div id="rin-bg"></div>
+<main id="rin-main">
+    <div class="mdui-card rin-card">
+        <div class="rin-card-title" style="text-align: center;margin: 1.5rem 0 1.5rem 0">Hydi 的动态页</div>
+		<div id="details">
+		<a onClick="showall()">
+				<div class="mdui-card rin-card rin-card-article" style="margin-bottom: 5px;">
+					<div class="rin-article-title">获取内容</div>
+					<div class="rin-article-content">页面加载完成后，稍事等待，然后点击来获取内容！</div>
+				</div>
+         </a>
+		</div>
+        <div class="rin-tr"></div>
+        <div class="rin-card-part" id="last">
+            <div class="rin-card-title2">@Hydi</div>
+            <div class="rin-card-content">星辰大海才是我的归宿</div>
+			<a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize hy-btn-pink" target="_blank" herf="detaile.html">返回</a>
+        </div>
+
+        <div class="rin-card-part" id="footer">
+            <div class="rin-card-content">©2021 Hydi | Made with love by <a href="tel:1145141919810">Hydi</a> | BG: <a href="https://www.pixiv.net/artworks/56652667" target="_blank">Pixiv</a></div>
+        </div>
+    </div>
+</main>
+	<script>
+		var Xp;
+		var Yp;
+		document.onmousedown=function(e){
+			Xp=e.clientX;
+			Yp=e.clientY;
+		}
+	</script>
+<script src="mdui/js/mdui.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="dist/APlayer.min.js"></script>
+<script src="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+<script>
+	AV.init({
+  		appId: "AtjKLXsruVYpIWpb73Pt6kQx-gzGzoHsz",
+  		appKey: "aWDemfpj3XbDKo2Ry23iIcA1",
+		serverURL: "https://atjklxsr.lc-cn-n1-shared.com"
+		});
+	//const { Query, User } = AV;
+	localStorage.setItem('debug', 'leancloud*');
+</script>
+<script src="assets/js/zone.js"></script>
+	<script>
+		var box=false;
+		var body = document.getElementsByTagName('body')[0];
+		var textArr=["❤" ,"有你真好~","(*^▽^*)","爱你~", "可爱~"];
+		var colorArr=["red","deeppink","lightgreen","purple","yellow","orange","aqua"]
+		document.addEventListener('click',(e)=>{
+			// 生成字符串
+			var ev = e || window.event;
+			var baseX = ev.clientX;
+			var baseY = ev.clientY;
+			var new_span=document.createElement('span');
+			new_span.innerText=textArr[parseInt(Math.random()*textArr.length)];
+			new_span.style.position='fixed';
+			new_span.style.left=baseX-10+'px';
+			new_span.style.top=baseY+'px';
+			new_span.style.color=colorArr[parseInt(Math.random()*colorArr.length)];
+			body.appendChild(new_span);
+			// 定时器1实现字符串上升效果
+			var timer = window.setInterval(()=>{
+				new_span.style.top=parseInt(window.getComputedStyle(new_span,null)['top'])-2+'px';
+				// console.log(window.getComputedStyle(new_span,null)['fontSize']);
+				new_span.style.opacity=window.getComputedStyle(new_span,null)['opacity']-0.02;
+				
+			},30);
+			// 定时器2实现字符串消失
+			window.setTimeout(()=>{
+				window.clearInterval(timer);
+				body.removeChild(new_span);
+			},1000);
+		},false);
+/*————————————————
+原文链接：https://blog.csdn.net/Victor2code/article/details/106672772
+---注：已根据需要做出适当修改*/
+
+	</script>
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+    margin: 10px 0 15px 0;
+    border-collapse: collapse;
+}
+td,th { 
+    border: 1px solid #ddd;
+    padding: 3px 10px;
+}
+th {
+    padding: 5px 10px;  
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+    -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+    body,code,pre code,h1,h2,h3,h4,h5,h6 {
+        color: black;
+    }
+    table, pre {
+        page-break-inside: avoid;
+    }
+}
+</style>
+</body>
+</html>

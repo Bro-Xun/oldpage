@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--
+ * Hydroxyl ion's Page
+ * 源代码来自 AyagawaSeirin's Page
+ * Last Update: 2021-11-21
+ * GitHub: https://github.com/AyagawaSeirin/
+ * Made with love by AyagawaSeirin [https://qwq.best/]
+ * 此个人主页运行于GithubPages，如果你也想使用，在我的公开仓库内即可找到源码。您可以任意修改，但请注明本原作者。
+-->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Hydroxyl ion | 羟基离子</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="mdui/css/mdui.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="icon" href="assets/img/GRE4u.png">
+	<style>
+		body,td,th{cursor:url("assets/img/GRULh.png"),auto;}
+		footer{cursor:url("assets/img/GRULh.png"),auto;}
+	</style>
+</head>
+<body height="100%">
+<div id="rin-bg"></div>
+<main id="rin-main">
+    <div id="rin-headimg"></div>
+    <div class="rin-name">Hydroxyl ion</div>
+    <div class="rin-description" id="word_holder">「<text id="words">生亦何苦，死亦何哀</text>」</div>
+	<a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" id="wdch">换一句</a><br>
+    <div class="rin-tr"></div>
+    <a class="mdui-btn mdui-btn-raised rin-btn mdui-text-capitalize" href="detaile.html" target="_self">More</a><br>
+</main>
+<footer id="rin-footer">
+    <div style="padding: 15px">©2020 Seirin | Made with love by Seirin | Covered with respect by Hydroxyl ion | BG: <a href="https://www.pixiv.net/artworks/56652667" id="bg-link" target="_blank">Pixiv</a></div>
+</footer>
+	<script src="mdui/js/mdui.min.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/word_controller.js"></script>
+	<script>
+		var body = document.getElementsByTagName('body')[0];
+		var textArr=["❤" ,"有你真好~","(*^▽^*)","爱你~", "可爱~"];
+		var colorArr=["red","deeppink","lightgreen","purple","yellow","orange","aqua"]
+		document.addEventListener('click',(e)=>{
+			// 生成字符串
+			var ev = e || window.event;
+			var baseX = ev.pageX;
+			var baseY = ev.pageY;
+			var new_span=document.createElement('span');
+			new_span.innerText=textArr[parseInt(Math.random()*textArr.length)];
+			new_span.style.position='fixed';
+			new_span.style.left=baseX-10+'px';
+			new_span.style.top=baseY+'px';
+			new_span.style.color=colorArr[parseInt(Math.random()*colorArr.length)];
+			body.appendChild(new_span);
+			// 定时器1实现字符串上升效果
+			var timer = window.setInterval(()=>{
+				new_span.style.top=parseInt(window.getComputedStyle(new_span,null)['top'])-2+'px';
+				// console.log(window.getComputedStyle(new_span,null)['fontSize']);
+				new_span.style.opacity=window.getComputedStyle(new_span,null)['opacity']-0.02;
+				
+			},30);
+			// 定时器2实现字符串消失
+			window.setTimeout(()=>{
+				window.clearInterval(timer);
+				body.removeChild(new_span);
+			},1000);
+		},false);
+/*————————————————
+版权声明：本文为CSDN博主「T型人小付」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Victor2code/article/details/106672772
+---注：已根据需要做出适当修改*/
+	</script>
+</body>
+</html>
