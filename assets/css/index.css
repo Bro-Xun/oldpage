@@ -10,7 +10,7 @@
     }
 }
 #rin-headimg{
-    background-image: url('assets/img/GRWA6.png');
+    background-image: url('https://cdn.jsdelivr.net/gh/bro-xun/sources@main/websites/head.jpg');
     border-radius: 10%;
     height: 150px;
     width:150px;
@@ -28,11 +28,9 @@
 
 #rin-headimg:hover{
     transform:scale(1.2);
-	cursor:url("assets/img/GRULh.png"),auto;
+	/*cursor:url("assets/img/GRULh.png"),auto;*/
 }
-#rin-headimg{
-	cursor:url("assets/img/GRULh.png"),auto;
-}
+/*#rin-headimg{cursor:url("assets/img/GRULh.png"),auto;}*/
 .rin-name{
     margin-top: 20px;
     color:white;
