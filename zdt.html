@@ -1,0 +1,276 @@
+<!--
+ * AyagawaSeirin's Page
+ * Last Update: 2020-02-05
+ * GitHub: https://github.com/AyagawaSeirin/
+ * Made with love by AyagawaSeirin [https://qwq.best/]
+ * 此个人主页运行于GithubPages，如果你也想使用，在我的公开仓库内即可找到源码。您可以任意修改，但请注明本原作者。
+-->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>新开启的页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="https://img.wenhairu.com/image/GRE4u">
+	<style>
+body {
+    margin: 0;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+::selection {color: #00e9e9;background: rgba(255,147,182,.70);}
+#rin-bg{top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-color: #818181;
+    background-image: url('https://img.wenhairu.com/image/Ge4hf');
+}
+#rin-bg:after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: -1;
+    position: fixed;
+    background-color: rgba(66,66,66,.6);
+}
+
+#rin-footer {
+    bottom: 0;
+    margin: auto;
+    width: 100vw;
+    position: absolute;
+    padding: 10px 0 10px 0;
+}
+#rin-footer div {
+    font-size: 14px;
+    text-align: center;
+    color: rgba(255,255,255,.79);
+}
+#rin-footer div a {
+    color: #2196f3;
+    font-weight: 700;
+    transition: all .3s;
+    text-decoration: none;
+}
+.rin-tr {
+    width: 70%;
+    height: 2px;
+	margin:auto;
+    background: rgba(255,255,255,.3);
+}
+mark{
+	background-image: linear-gradient(#eacf1336, #ffe21dad);
+	background-color: transparent;
+	background-position: 0 85%;
+	background-size: 100% 25%;
+	background-repeat: no-repeat;
+	color: var(--routine);
+}
+#rin-main{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    height: 100vh;
+    max-width: 1200px;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+@media(max-height:777px){
+    #rin-main {
+     height: auto;
+    }
+   }
+.rin-card{
+    margin: 10px 0;
+    padding:15px 25px;
+    padding-bottom:0;
+    background-color: rgba(255,64,129,0.25);
+	border-radius:40px;
+}
+.rin-card-title{
+    font-size: 30px;
+    color:white;
+    margin-bottom: 15px;
+}
+.rin-card-title2{
+    font-size: 20px;
+    color:white;
+    margin-bottom: 5px;
+}
+.rin-card-content{
+    font-size: 17px;
+    color:white;
+    margin-bottom: 5px;
+    line-height:1.5;
+}
+.rin-card-content-s{
+    font-size: 0.5px;
+    color:white;
+    margin-bottom: 0px;
+    line-height:1;
+}
+.rin-card-title2 a{
+    text-decoration:none;
+}
+.rin-card-part{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.mdui-progress{
+    background-color: rgba(255,255,255,.2)!important;
+}
+.mdui-progress-determinate{
+    background-color: rgb(255,255,255)!important;
+
+}
+.mdui-tooltip{
+    margin-top:10px!important;
+}
+.rin-btn {
+    color:white;
+    margin-right: 10px;
+    min-width:100px!important;
+	cursor:url("https://img.wenhairu.com/image/GRULh"),auto;
+}
+@media only screen and (min-width: 321px) and (max-width: 1024px) {
+    .rin-btn {
+        margin-bottom: 10px;
+    }
+}
+.rin-btn-blue{
+    border-bottom: 1.5px solid #28A9E0;
+}
+.rin-btn-blue:hover{
+    background-color: #28A9E0;
+    transition: all .3s;
+}
+.rin-btn-pink{
+    border-bottom: 1.5px solid #F9A2A8;
+}
+.rin-btn-pink:hover{
+    background-color: #F9A2A8;
+    transition: all .3s;
+}
+.rin-btn-black{
+    border-bottom: 1.5px solid #353535;
+}
+.rin-btn-black:hover{
+    background-color: #353535;
+    transition: all .3s;
+}
+.rin-tr{
+    margin-top:5px;
+    margin-bottom:15px;
+}
+#last {
+    text-align: center;
+}
+#last .rin-card-title2{
+    letter-spacing : 10px;
+    margin-bottom: 10px;
+}
+#last .rin-card-content{
+    font-size: 12px;
+    letter-spacing: 1em;
+    opacity: .5;
+}
+#footer{
+    text-align: center;
+}
+#footer .rin-card-content{
+    font-size: 12px;
+    opacity: .5;
+}
+#footer div a {
+    font-weight: 700;
+    text-decoration: none;
+}
+mark{
+	background-image: linear-gradient(#eacf1336, #ffe21dad);
+	background-color: transparent;
+	background-position: 0 85%;
+	background-size: 100% 25%;
+	background-repeat: no-repeat;
+	color: var(--routine);
+}
+		a:hover{color:gray}
+		a:active{color:darkgray}
+		a:link{color:white}
+		a:visited{color:white}
+		p{margin-bottom: 1cm;color: aliceblue;margin-left: 20px;margin-right: 20px}
+</style>
+</head>
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink" height="100%">
+<div id="rin-bg"></div>
+<main id="rin-main">
+    <div class="mdui-card rin-card">
+		<div style="text-align: center;font-weight: bold;font-size: 30px;color:aliceblue" id="title">此处应有标题</div>
+		<div id="detailedinfo" align="center" style="color: aliceblue;margin-top: 0.2cm">详细信息保留地</div>
+		<div class="rin-tr"></div>
+		<div id="content"><p>此处是段落一</p><p>此处是段落二</p></div>
+        <div class="rin-tr"></div>
+        <div class="rin-card-part" id="footer">
+            <div class="rin-card-content">©2021 Hydi | Made with love by <a href="tel:1145141919810">Hydroxyl ion</a> | BG: <a href="https://www.pixiv.net/artworks/56652667" target="_blank">Pixiv</a></div>
+        </div>
+    </div>
+</main>
+	<script>
+		var Xp;
+		var Yp;
+		document.onmousedown=function(e){
+			Xp=e.clientX;
+			Yp=e.clientY;
+		}
+	</script>
+	<script>
+		var box=false;
+		var body = document.getElementsByTagName('body')[0];
+		var textArr=["❤" ,"有你真好~","(*^▽^*)","爱你~", "可爱~"];
+		var colorArr=["red","deeppink","lightgreen","purple","yellow","orange","aqua"]
+		document.addEventListener('click',(e)=>{
+			if(splash==false){
+			// 生成字符串
+			var ev = e || window.event;
+			var baseX = ev.clientX;
+			var baseY = ev.clientY;
+			var new_span=document.createElement('span');
+			new_span.innerText=textArr[parseInt(Math.random()*textArr.length)];
+			new_span.style.position='fixed';
+			new_span.style.left=baseX-10+'px';
+			new_span.style.top=baseY+'px';
+			new_span.style.color=colorArr[parseInt(Math.random()*colorArr.length)];
+			body.appendChild(new_span);
+			// 定时器1实现字符串上升效果
+			var timer = window.setInterval(()=>{
+				new_span.style.top=parseInt(window.getComputedStyle(new_span,null)['top'])-2+'px';
+				// console.log(window.getComputedStyle(new_span,null)['fontSize']);
+				new_span.style.opacity=window.getComputedStyle(new_span,null)['opacity']-0.02;
+				
+			},30);
+			// 定时器2实现字符串消失
+			window.setTimeout(()=>{
+				window.clearInterval(timer);
+				body.removeChild(new_span);
+			},1000);
+			   }
+			else{
+				//
+			}
+		},false);
+/*————————————————
+版权声明：本文为CSDN博主「T型人小付」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Victor2code/article/details/106672772
+---注：已根据需要做出适当修改*/
+
+	</script>
+</body>
+</html>
