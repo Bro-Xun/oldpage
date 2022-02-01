@@ -212,3 +212,7 @@ function c_js(){
 		last=content;
 	}
 }*/
+var TextArr = [
+	"求文案，想不出来了",
+	"帮个忙吧"
+];

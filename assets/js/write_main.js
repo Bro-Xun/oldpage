@@ -105,7 +105,7 @@ function pre_save(){		//将关键信息写入all对象
 		document.title=title;
 		tags=content.match(/\$[^\$]+\$+/g);
 		if(tags==null){
-			//
+			tags=["未指定标签"];
 		}
 		else{
 			for (var i=0;i<tags.length;i++){
@@ -130,7 +130,7 @@ wtf.onclick = function(){
 	var c11 = document.getElementById("c").checked;
 	var f11 = document.getElementById("f").checked;
 	zone.set('author','Hydi');///
-	zone.set('content',marked((content.replace(/"/g,"'")).replace(/\$[^\$]+\$+/g,"")));
+	zone.set('content',marked((content.replace(/\"/g,"'")).replace(/\"/g,"'").replace(/\$[^\$]+\$+/g,"")));
 	zone.set('copyright',c11);
 	zone.set('title',title);
 	zone.set('tags',tags);
