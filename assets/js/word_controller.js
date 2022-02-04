@@ -1,13 +1,14 @@
 // JavaScript Document
-// **last updated 2021/11/21
+// **last updated 2022/02/04
 //var changes=0;
-var last="生亦何苦，死亦何哀";
+var last="当溢美之词掩盖了真相，沉默不语便成为了罪过。";
 //var list=[];
 var content;
 //var data={};
 var change = document.getElementById("wdch");
 //var 
 var mywords=[
+	"当溢美之词掩盖了真相，沉默不语便成为了罪过。",
 	"星河滚烫，你是人间理想",
 	"生亦何苦，死亦何哀",
 	"我在等一个人，等一个我想保护的人。",
@@ -19,7 +20,7 @@ var mywords=[
 	"乍暖还寒时候，最难将息。",
 	"从一个城市到另一个城市，只有靠自己努力。",
 	"没有值得不值得，只有愿意不愿意。",
-	//"我再也不要看见她哭的样子了，就算我从此从她心目中消失。",
+	"我再也不要看见她哭的样子了，就算我从此从她心目中消失。",
 	//"即使是像遥远的梦想般存在的她，只要握住一支笔......就能触及！！",
 	"前天是小兔子，昨天是小鹿，今天是你。",
 	"Yesterday is a history, tomorrow is a mystery, but today is a gift.",
@@ -43,9 +44,30 @@ var mywords=[
 	"我的生活就像在白夜里行走。",
 	"世上有两样东西不可直视，一是太阳，二是人心。",
 	"CO<sub>2</sub>+H<sub>2</sub>O == H<sub>2</sub>CO<sub>3</sub><br>6CO<sub>2</sub>+6H<sub>2</sub>O =光合= C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>+6O<sub>2</sub>↑<br>同样的开始 不同的条件 不同的结局",
-	//"如果我讨厌她，就不会这么烦恼了!",
+	"如果我讨厌她，就不会这么烦恼了!",
 	"一生一念·一念一人",
-	"hello world",""]
+	"hello world",
+	"我们都很擅长口是心非，但又希望对方能有所察觉。",
+	"败者死于绝望，胜者死于渴望。",
+	"All for one, one for all.",
+	"呐，知道么，樱花飘落的速度，是每秒五厘米哦~",
+	"越是试着忘记，越是记得深刻。",
+	"你曾经是谁的英雄呢？",
+	"愚昧总是会先压着真理。",
+	"仅只一次，万般怜爱。",
+	"Across the Great <sub>Fire</sub>Wall, we can reach every corner in the world.",
+	"每一次相聚都将是一场离别的盛宴。",
+	"往事依旧，物是全非。",
+	"成王败寇。",
+	"半夜还在Coding的人也是蛮拼的吧...",
+	"现实中，有人幸福，就必定有人被抛弃，有人光鲜，就必须有人满身泥泞。",
+	"( ⊙ o ⊙ )啊，你在看这条一言",
+	"杀了上帝，我就是神！",
+	"我本可忍受禁锢，如果我不曾过感受自由",
+	"我能遇到你真是太好了!",
+	"繁华只是散场的开始。",
+	"你知道吗?得不出结果就是所谓的无能。",
+	""]
 	//use "//" before a line to delete
 change.onclick = function(){
 /*	list=[];
@@ -212,7 +234,7 @@ function c_js(){
 		last=content;
 	}
 }*/
-var TextArr = [
+var textArr = [
 	"求文案，想不出来了",
 	"帮个忙吧"
 ];

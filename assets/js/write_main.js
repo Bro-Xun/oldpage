@@ -130,7 +130,7 @@ wtf.onclick = function(){
 	var c11 = document.getElementById("c").checked;
 	var f11 = document.getElementById("f").checked;
 	zone.set('author','Hydi');///
-	zone.set('content',marked((content.replace(/\"/g,"'")).replace(/\"/g,"'").replace(/\$[^\$]+\$+/g,"")));
+	zone.set('content',marked((content.replace(/\"/g,"'")).replace(/\$[^\$]+\$+/g,"")).replace(/\"/g,"'"));
 	zone.set('copyright',c11);
 	zone.set('title',title);
 	zone.set('tags',tags);
