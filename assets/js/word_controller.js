@@ -131,7 +131,7 @@ change.onclick = function(){
 		}
 		}
 		changes=changes+1;*/
-		content=mywords[Math.floor(Math.random()*(mywords.length+1))];
+		content=mywords[Math.floor(Math.random()*(mywords.length))];
 		if(last==content){
 			//
 		}
