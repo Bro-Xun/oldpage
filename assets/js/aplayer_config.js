@@ -606,6 +606,314 @@ const ap = new APlayer({
             url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/zys.mp3',
 			lrc:'assets/lyrics/zys.lrc',
             theme: '#46718b'
+        },{
+            name: '城南花已开，愿君常安在',
+            artist: 'AirJordy',
+			cover:'assets/img/2.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/2.mp3',
+			lrc:'assets/lyrics/2.lrc',
+            theme: '#46718b'
+        },{
+            name: '墙外',
+            artist: '黄明志/小花',
+			cover:'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/img/1.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/1.mp3',
+			lrc:'assets/lyrics/1.mp3',
+            theme: '#46718b'
+        },{
+            name: 'Apologize',
+            artist: 'One Republic',
+			cover:'assets/img/3.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/3.mp3',
+			lrc:'assets/lyrics/3.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Bad Apple!! feat. nomico',
+            artist: 'のみこ',
+			cover:'assets/img/4.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/4.mp3',
+			lrc:'assets/lyrics/4.lrc',
+            theme: '#46718b'
+        },{
+            name: '静之守候',
+            artist: 'Candy_Wind',
+			cover:'assets/img/5.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/5.mp3',
+			lrc:'assets/lyrics/5.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Undertale (Chime Remix)',
+            artist: 'Chime/Toby Fox',
+			cover:'assets/img/6.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/6.mp3',
+			lrc:'assets/lyrics/6.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Remind You',
+            artist: 'Christopher',
+			cover:'assets/img/7.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/7.mp3',
+			lrc:'assets/lyrics/7.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Croatian Rhapsody',
+            artist: '马克西姆&Nikša Bratoš&Remi Kazinoti&Craig Pruess&Orchestra',
+			cover:'assets/img/8.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/8.mp3',
+			lrc:'assets/lyrics/8.lrc',
+            theme: '#46718b'
+        },{
+            name: 'mong đợi',
+            artist: 'dai kieu',
+			cover:'assets/img/9.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/9.mp3',
+			lrc:'assets/lyrics/9.lrc',
+            theme: '#46718b'
+        },{
+            name: 'falling again',
+            artist: 'Soldierbanks',
+			cover:'assets/img/10.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/10.mp3',
+			lrc:'assets/lyrics/10.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Play',
+            artist: 'K-391/Alan Walker/Tungevaag/Mangoo',
+			cover:'assets/img/11.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/11.mp3',
+			lrc:'assets/lyrics/11.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Music Box Dancer',
+            artist: '...',
+			cover:'assets/img/12.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/12.mp3',
+			lrc:'assets/lyrics/12.lrc',
+            theme: '#46718b'
+        },{
+            name: '晚星',
+            artist: 'NSZX',
+			cover:'assets/img/13.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/13.mp3',
+			lrc:'assets/lyrics/13.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Time To Love',
+            artist: 'October',
+			cover:'assets/img/14.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/14.mp3',
+			lrc:'assets/lyrics/14.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Old Doll',
+            artist: 'Mad Father',
+			cover:'assets/img/15.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/15.mp3',
+			lrc:'assets/lyrics/15.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Pneumatic Tokyo',
+            artist: 'ENV',
+			cover:'assets/img/16.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/16.mp3',
+			lrc:'assets/lyrics/16.lrc',
+            theme: '#46718b'
+        },{
+            name: 'fantasy',
+            artist: 'Rkps',
+			cover:'assets/img/17.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/17.mp3',
+			lrc:'assets/lyrics/17.lrc',
+            theme: '#46718b'
+        },{
+            name: '那些年',
+            artist: 'Uu',
+			cover:'assets/img/18.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/18.mp3',
+			lrc:'assets/lyrics/18.lrc',
+            theme: '#46718b'
+        },{
+            name: '夏天的风',
+            artist: 'Uu',
+			cover:'assets/img/19.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/19.mp3',
+			lrc:'assets/lyrics/19.lrc',
+            theme: '#46718b'
+        },{
+            name: 'Nevada',
+            artist: 'Vicetone/Cozi Zuehlsdorff',
+			cover:'assets/img/20.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/20.mp3',
+			lrc:'assets/lyrics/20.lrc',
+            theme: '#46718b'
+        },{
+            name: 'You Raise Me Up',
+            artist: 'Westlife',
+			cover:'assets/img/21.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/21.mp3',
+			lrc:'assets/lyrics/21.lrc',
+            theme: '#46718b'
+        },{
+            name: 'いつも何度でも',
+            artist: '日本群星',
+			cover:'assets/img/22.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/22.mp3',
+			lrc:'assets/lyrics/22.lrc',
+            theme: '#46718b'
+        },{
+            name: 'フリージア',
+            artist: 'Uru',
+			cover:'assets/img/23.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/23.mp3',
+			lrc:'assets/lyrics/23.lrc',
+            theme: '#46718b'
+        },{
+            name: 'みちしるべ',
+            artist: '茅原実里 (ちはらみのり)',
+			cover:'assets/img/24.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/24.mp3',
+			lrc:'assets/lyrics/24.lrc',
+            theme: '#46718b'
+        },{
+            name: '想把我唱给你听',
+            artist: '阿金/玄子',
+			cover:'assets/img/25.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/25.mp3',
+			lrc:'assets/lyrics/25.lrc',
+            theme: '#46718b'
+        },{
+            name: '因为爱情',
+            artist: '陈奕迅/王菲',
+			cover:'assets/img/26.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/26.mp3',
+			lrc:'assets/lyrics/26.lrc',
+            theme: '#46718b'
+        },{
+            name: '开往冬天的地铁',
+            artist: '地铁兄弟',
+			cover:'assets/img/27.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/27.ogg',
+			lrc:'assets/lyrics/27.lrc',
+            theme: '#46718b'
+        },{
+            name: '关键词',
+            artist: '林俊杰',
+			cover:'assets/img/28.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/28.mp3',
+			lrc:'assets/lyrics/28.lrc',
+            theme: '#46718b'
+        },{
+            name: 'いのちの名前',
+            artist: '広橋真紀子',
+			cover:'assets/img/29.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/29.mp3',
+			lrc:'assets/lyrics/29.lrc',
+            theme: '#46718b'
+        },{
+            name: '恋愛サーキュレーション (恋爱循环)',
+            artist: '花澤香菜',
+			cover:'assets/img/30.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/30.mp3',
+			lrc:'assets/lyrics/30.lrc',
+            theme: '#46718b'
+        },{
+            name: '醒不来的梦',
+            artist: '回小仙',
+			cover:'assets/img/31.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/31.mp3',
+			lrc:'assets/lyrics/31.lrc',
+            theme: '#46718b'
+        },{
+            name: '江南',
+            artist: '伶伶er',
+			cover:'assets/img/32.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/32.mp3',
+			lrc:'assets/lyrics/32.lrc',
+            theme: '#46718b'
+        },{
+            name: 'lit(var)',
+            artist: '牛尾憲輔 (agraph)',
+			cover:'assets/img/33.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/33.mp3',
+			lrc:'assets/lyrics/33.lrc',
+            theme: '#46718b'
+        },{
+            name: '兄弟抱一下',
+            artist: '庞龙',
+			cover:'assets/img/34.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/34.mp3',
+			lrc:'assets/lyrics/34.lrc',
+            theme: '#46718b'
+        },{
+            name: '白桦林',
+            artist: '朴树',
+			cover:'assets/img/35.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/35.mp3',
+			lrc:'assets/lyrics/35.lrc',
+            theme: '#46718b'
+        },{
+            name: '清白之年',
+            artist: '朴树',
+			cover:'assets/img/36.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/36.mp3',
+			lrc:'assets/lyrics/36.lrc',
+            theme: '#46718b'
+        },{
+            name: '她说',
+            artist: '林俊杰',
+			cover:'assets/img/37.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/37.mp3',
+			lrc:'assets/lyrics/37.lrc',
+            theme: '#46718b'
+        },{
+            name: '有点甜',
+            artist: '汪苏泷/花澤香菜',
+			cover:'assets/img/38.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/38.mp3',
+			lrc:'assets/lyrics/38.lrc',
+            theme: '#46718b'
+        },{
+            name: '空欢喜',
+            artist: '王靖雯不胖',
+			cover:'assets/img/39.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/39.mp3',
+			lrc:'assets/lyrics/39.lrc',
+            theme: '#46718b'
+        },{
+            name: '善变',
+            artist: '王靖雯不胖',
+			cover:'assets/img/40.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/40.mp3',
+			lrc:'assets/lyrics/40.lrc',
+            theme: '#46718b'
+        },{
+            name: '回家的路',
+            artist: '小阚',
+			cover:'assets/img/41.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/41.mp3',
+			lrc:'assets/lyrics/41.lrc',
+            theme: '#46718b'
+        },{
+            name: '夜空中最亮的星',
+            artist: '逃跑计划',
+			cover:'assets/img/42.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/42.mp3',
+			lrc:'assets/lyrics/42.lrc',
+            theme: '#46718b'
+        },{
+            name: 'There For You',
+            artist: '元一',
+			cover:'assets/img/43.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/43.mp3',
+			lrc:'assets/lyrics/43.lrc',
+            theme: '#46718b'
+        },{
+            name: '成都',
+            artist: '赵雷',
+			cover:'assets/img/44.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/44.mp3',
+			lrc:'assets/lyrics/44.lrc',
+            theme: '#46718b'
         }
 		//
     ]
