@@ -24,9 +24,16 @@
 		a:active{color:darkgray}
 		a:link{color:white}
 		a:visited{color:white}
+    #waiting{
+        background-color: hotpink;
+        border: 0.25rem solid #ccc;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        margin: 0.5rem;
+    }
 </style>
 </head>
-<body class="mdui-theme-primary-pink mdui-theme-accent-pink" height="100%" onLoad="cute_change()">
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink" height="100%" onLoad="single_years();cute_change()">
 <div id="rin-bg"></div>
 <main id="rin-main">
     <div class="mdui-card rin-card">
@@ -260,13 +267,13 @@
         </div>
 	<div class="rin-card-part" id="single">
             <div class="rin-card-title2 mdui-typo"><a href="#Waiting_for_himORher">#</a> As a single dog ...</div>
-			<div class="rin-card-content mdui-typo" align="center">计时中: 已成功保持 <text id="waiting"></text>年，加油</div>
+			<div class="rin-card-content mdui-typo" align="center">计时中: 已成功保持 <span id="waiting">loading...</span>年，加油</div>
 		</div>
 		<div id="aplayer" class="aplayer"></div>
         <div class="rin-tr"></div>
 
         <div class="rin-card-part" id="last">
-            <div class="rin-card-title2">xun哥@Bro-Xun</div>
+            <div class="rin-card-title2">@Bro-Xun</div>
             <div class="rin-card-content">我喜欢远行</div>
         </div>
 
@@ -312,19 +319,8 @@
 <script src="assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script>
+    var splash = false;//...
 	var p_value=0;
-	function cute_change(){
-		var time = new Date();
-		var s=time.getTime();
-		s=s-1131465600000;
-		ym=Math.floor(s*100000/31555872)/100000000;
-		document.getElementById("waiting").innerHTML=ym;
-		setInterval("cc_detail()",400);
-	}
-	function cc_detail(){
-		p_value=Math.floor(Math.random()*100);
-		document.getElementById("cute").style="width:"+String(p_value)+"%";
-	}
 	</script>
 	<script src="assets/js/aplayer_config.js"></script>
 	<script>
@@ -367,5 +363,22 @@
 ---注：已根据需要做出适当修改*/
 
 	</script>
+    <script>
+    function single_years(){
+		var time = new Date();
+		var s=time.getTime();
+		s=s-1131465600000;
+		ym=Math.floor(s*100000/31555872)/100000000;
+		document.getElementById("waiting").innerHTML=ym;
+    }
+    function cute_change(){
+		var cute_change = setInterval("cc_detail()",400); //cute value changes controller
+        var years_change = setInterval("single_years()",500) //single years changes controller
+	}
+	function cc_detail(){
+		p_value=Math.floor(Math.random()*100);
+		document.getElementById("cute").style="width:"+String(p_value)+"%";
+	}
+    </script>
 </body>
 </html>
