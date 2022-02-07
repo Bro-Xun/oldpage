@@ -368,7 +368,7 @@
 		var time = new Date();
 		var s=time.getTime();
 		s=s-1131465600000;
-		ym=Math.floor(s*100000/31555872)/100000000;
+		ym=(Math.floor(s*100000/31555872)/100000000).toFixed(8);
 		document.getElementById("waiting").innerHTML=ym;
     }
     function cute_change(){
