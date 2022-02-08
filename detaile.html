@@ -394,7 +394,7 @@
             var time = new Date();
             var s = time.getTime();
             s = s - 1131465600000;
-            var ym = formatSeconds(s / 1000);
+            var ym = formatSeconds(Math.floor(s / 1000));
             document.getElementsByClassName("waiting")[5].innerHTML = ym[0];
             document.getElementsByClassName("waiting")[4].innerHTML = ym[1];
             document.getElementsByClassName("waiting")[3].innerHTML = ym[2];
