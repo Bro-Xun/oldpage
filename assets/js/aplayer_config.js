@@ -9,7 +9,7 @@ const ap = new APlayer({
     volume: 0.3,
     mutex: true,
     listFolded: true,
-    listMaxHeight: 90,
+    listMaxHeight: 250,
     lrcType: 3,
     audio: [
         {
@@ -618,7 +618,7 @@ const ap = new APlayer({
             artist: '黄明志/小花',
 			cover:'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/img/1.jpg',
             url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/1.mp3',
-			lrc:'assets/lyrics/1.mp3',
+			lrc:'assets/lyrics/1.lrc',
             theme: '#46718b'
         },{
             name: 'Apologize',
