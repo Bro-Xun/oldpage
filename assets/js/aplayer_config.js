@@ -914,6 +914,13 @@ const ap = new APlayer({
             url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/44.mp3',
 			lrc:'assets/lyrics/44.lrc',
             theme: '#46718b'
+        },{
+            name: '工具人之歌',
+            artist: 'Potter King',
+			cover:'assets/img/45.jpg',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/45.m4a',
+			lrc:'assets/lyrics/45.lrc',
+            theme: 'pink'
         }
 		//
     ]
