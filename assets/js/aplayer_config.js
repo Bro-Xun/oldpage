@@ -40,7 +40,7 @@ const ap = new APlayer({
             artist: '韩可可',
             url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/错位时空（女版）.mp3',
             cover: 'https://img4.kuwo.cn/star/albumcover/120/56/21/3217813879.jpg',
-            lrc: 'assets/lyrics/错位时空（女版）.lrc',
+            lrc: 'assets/lyrics/错位时空 (女版).lrc',
             theme: '#ff8eb3'
         },
 		{
@@ -577,13 +577,13 @@ const ap = new APlayer({
         },{
             name: '我对您的思念，飘落在世界的每个角落',
             artist: '私に闻いて风i/酥糖Yuki',
-            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/sn.mp3',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/sl.mp3',
             cover: 'https://img4.kuwo.cn/star/albumcover/120/37/58/3778134116.jpg',
             theme: '#46718b'
         },{
             name: 'Soul',
             artist: '吴宇深',
-            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/sl.mp3',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/sn.mp3',
             cover: 'http://p3.music.126.net/HTBu-4rLoO_lC29h1HVeMg==/109951163821564216.jpg',
             theme: '#46718b'
         },{
