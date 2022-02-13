@@ -258,8 +258,8 @@
         }
         window.onload = function () {
             document.title = "BroXun: " + window.opener.data.title;
-            document.getElementById("title").innerHTML = "作者: " + window.opener.data.author.replace("Hydi", "BroXun") + " " + "标签: " + window.opener.data.tags + " " + "时间: " + Math.floor((window.opener.data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(window.opener.data.timestamp) + " " + window.opener.data.views + "阅读（重复统计）";
-            document.getElementById("detailedinfo").innerHTML = window.opener.data.title;
+            document.getElementById("detailedinfo").innerHTML = "作者: " + window.opener.data.author.replace("Hydi", "BroXun") + " " + "标签: " + window.opener.data.tags + " " + "时间: " + Math.floor((window.opener.data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(window.opener.data.timestamp) + " " + window.opener.data.views + "阅读（重复统计）";
+            document.getElementById("title").innerHTML = window.opener.data.title;
             document.getElementById("content").innerHTML = window.opener.data.content;
             console.log("script successfully run")
         }
