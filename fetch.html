@@ -37,7 +37,7 @@
 					zone.find().then((det) => {
 						data = det[0].attributes;
 					});
-					if (data == {}) {
+					if (Object.keys(data).length == 0) {
 						console.info("1");
 						document.getElementsByClassName("main")[0].innerHTML = "您请求的对象不存在，换一个试试吧~";
 					} else {
