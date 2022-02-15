@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<title>中继页面</title>
+</head>
+
+<body style="background-color:rgb(46, 45, 45);">
+	<img src="https://cdn.jsdelivr.net/gh/bro-xun/sources@main/websites/head.jpg" style="margin: auto;display: block;width: 80%;max-width: 15cm;">
+	<div class="main" style="text-align: center;color:pink;margin-top: 0.5cm;font-size: 25px;">
+	</div>
+	<script src="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+	<script>
+		AV.init({
+			appId: "AtjKLXsruVYpIWpb73Pt6kQx-gzGzoHsz",
+			appKey: "aWDemfpj3XbDKo2Ry23iIcA1",
+			serverURL: "https://atjklxsr.lc-cn-n1-shared.com"
+		});
+		//const { Query, User } = AV;
+		localStorage.setItem('debug', 'leancloud*');
+		const Zone = AV.Object.extend('Zone');
+		const zone = new AV.Query('Zone');
+	</script>
+	<script>
+	var data = {};
+		window.onload = function () {
+			
+			if (window.location.search == "") {
+				//
+			} else {
+				var UsefulRequest = window.location.search.split("?")[1].match(/id=[^>]+/)[0].split("&")[0];
+				if (UsefulRequest != "") {
+					var request = UsefulRequest.split("=")[1];
+					zone.equalTo('objectId', request);
+					zone.find().then((det) => {
+						data = det[0].attributes;
+					});
+					if (data == {}) {
+						console.info("1");
+						document.getElementsByClassName("main")[0].innerHTML = "您请求的对象不存在，换一个试试吧~";
+					} else {
+						console.info("2");
+						document.getElementsByClassName("main")[0].innerHTML = "解析成功，正在跳转~";
+						window.open("zdt.html");
+						document.getElementsByClassName("main")[0].innerHTML = document.getElementsByClassName("main")[0].innerHTML + "<a OnClick=\"window.open(\'zdt.html\')\">若没有跳转，请点击这里</a>";
+					}
+				} else {
+					document.getElementsByClassName("main")[0].innerHTML = "哎呀，您的请求格式似乎不正确呢~";
+				}
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>
