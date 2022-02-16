@@ -263,6 +263,7 @@
         }
     </style>
     <script>
+    document.ObjId = window.opener.data.id;
         function getLocalTime(mS) {
             return new Date(parseInt(mS)).toLocaleString('chinese', { hour12: false }).replace(/:\d{1,2}$/, ' ').replace(/24:/, "00:");
         }
@@ -272,7 +273,6 @@
             document.getElementById("title").innerHTML = window.opener.data.title;
             document.getElementById("content").innerHTML = window.opener.data.content;
             console.log("script successfully run");
-            document.ObjId = window.opener.data.id;
         }
     </script>
     <script>
