@@ -30,22 +30,25 @@
 			if (window.location.search == "") {
 				//
 			} else {
-				var UsefulRequest = window.location.search.split("?")[1].match(/id=[^>]+/)[0].split("&")[0];
-				if (UsefulRequest != "") {
+				var UsefulRequest = ((window.location.search + "?").split("?")[1] + "&id=4f5da2").match(/id=[^>]+/)[0].split("&")[0];
+				console.log(UsefulRequest);
+				if (UsefulRequest != "" && UsefulRequest != "id=4f5da2") {
 					var request = UsefulRequest.split("=")[1];
 					zone.equalTo('objectId', request);
 					zone.find().then((det) => {
-						data = det[0].attributes;
-					});
-					if (Object.keys(data).length == 0) {
+						console.log(det);
+						console.log(data);
+					if (det.length == 0) {
 						console.info("1");
 						document.getElementsByClassName("main")[0].innerHTML = "您请求的对象不存在，换一个试试吧~";
 					} else {
+						data = det[0].attributes;
 						console.info("2");
 						document.getElementsByClassName("main")[0].innerHTML = "解析成功，正在跳转~";
 						window.open("zdt.html");
 						document.getElementsByClassName("main")[0].innerHTML = document.getElementsByClassName("main")[0].innerHTML + "<a OnClick=\"window.open(\'zdt.html\')\">若没有跳转，请点击这里</a>";
 					}
+					});
 				} else {
 					document.getElementsByClassName("main")[0].innerHTML = "哎呀，您的请求格式似乎不正确呢~";
 				}
