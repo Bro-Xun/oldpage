@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <title>新开启的页面</title>
-    <script src="Valine/Valine.min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 </head>
@@ -28,7 +28,9 @@
                 <p>此处是段落二</p>
             </div>
             <div class="rin-tr"></div>
-            <div id="vcomments"></div>
+            <div class="hy-card-zone">
+                <div id="vcomments"></div>
+            </div>
             <div class="rin-tr"></div>
             <div class="rin-card-part" id="footer">
                 <div class="rin-card-content">©2022 BroXun | Made with love by <a href="tel:1145141919810">BroXun
@@ -40,6 +42,15 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/detaile.css">
     <style>
+        .hy-card-zone{
+            border-radius: 10px;
+            padding: 1rem 1rem;
+            margin: 1.5rem;
+            width:85%;
+            /*max-width: ;*/
+            color: #cccccc88;
+        }
+
         body {
             margin: 0;
         }
@@ -263,13 +274,13 @@
         }
     </style>
     <script>
-    document.ObjId = window.opener.data.id;
+        document.ObjId = window.opener.data.id;
         function getLocalTime(mS) {
             return new Date(parseInt(mS)).toLocaleString('chinese', { hour12: false }).replace(/:\d{1,2}$/, ' ').replace(/24:/, "00:");
         }
         window.onload = function () {
             document.title = "BroXun: " + window.opener.data.title;
-            document.getElementById("detailedinfo").innerHTML = "作者: " + window.opener.data.author.replace("Hydi", "BroXun") + " " + "标签: " + window.opener.data.tags + " " + "时间: " + Math.floor((window.opener.data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(window.opener.data.timestamp) + " " + window.opener.data.views + "阅读（重复统计）";
+            document.getElementById("detailedinfo").innerHTML = "作者: " + window.opener.data.author.replace("Hydi", "BroXun") + " " + "标签: " + String(window.opener.data.tags).replace(/,/g," | ") + " " + "时间: " + Math.floor((window.opener.data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(window.opener.data.timestamp) + " " + window.opener.data.views + "阅读（重复统计）";
             document.getElementById("title").innerHTML = window.opener.data.title;
             document.getElementById("content").innerHTML = window.opener.data.content;
             console.log("script successfully run");
