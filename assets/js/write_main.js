@@ -30,7 +30,7 @@ window.onload = function () {
 		alert("log in please\nvisitor account:\n UserId:visitor\n nopassword");
 	}
 	else {
-		document.getElementById("lgot").style.display = "";
+		document.getElementById("lgout").style.display = "";
 		document.getElementById("lgin").style.display = "none";
 		document.getElementsByClassName("glyphicon-log-in1")[0].innerHTML = "欢迎" + AV.User.current().attributes.username + "点击退出登录";
 	}
