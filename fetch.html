@@ -44,6 +44,7 @@
 					} else {
 						data = det[0].attributes;
 						console.info("2");
+						window.id = det[0].id;
 						document.getElementsByClassName("main")[0].innerHTML = "解析成功，正在跳转~";
 						window.open("zdt.html");
 						document.getElementsByClassName("main")[0].innerHTML = document.getElementsByClassName("main")[0].innerHTML + "<a OnClick=\"window.open(\'zdt.html\')\">若没有跳转，请点击这里</a>";

@@ -10,8 +10,9 @@
 <head>
     <meta charset="utf-8">
     <title>新开启的页面</title>
-    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-    <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+    <script src="Valine/Valine1.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+    <script src="https://use.fontawesome.com/476b4d3241.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 </head>
 
@@ -20,33 +21,53 @@
     <main id="rin-main">
         <div class="mdui-card rin-card">
             <div style="text-align: center;font-weight: bold;font-size: 30px;color:aliceblue;line-height: 35px;"
-                id="title">此处应有标题</div>
-            <div id="detailedinfo" align="center" style="color: aliceblue;margin-top: 0.2cm">详细信息保留地</div>
+                id="title">title</div>
+            <div id="detailedinfo" align="center" style="color: aliceblue;margin-top: 0.2cm">
+                <span style="margin: 0.2cm;"><i class="fa fa-user-circle" aria-hidden="true"></i>author</span>
+                <span style="margin: 0.2cm;"><i class="fa fa-tags" aria-hidden="true"></i>tags</span>
+                <span style="margin: 0.2cm;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>edittime</span>
+                <span style="margin: 0.2cm;"><i class="fa fa-clock-o" aria-hidden="true"></i>releasedate</span>
+                <span style="margin: 0.2cm;"><i class="fa fa-eye" aria-hidden="true"></i>view</span>
+                <span style="margin: 0.2cm;"><i class="fa fa-font" aria-hidden="true"></i>words</span>
+    </div>
             <div class="rin-tr"></div>
             <div id="content">
                 <p>此处是段落一</p>
                 <p>此处是段落二</p>
             </div>
-            <div class="rin-tr"></div>
-            <div class="hy-card-zone">
-                <div id="vcomments"></div>
+            <div class="detailed-info" style="display:block;color:black;background:wheat;padding:0.1cm;border-radius: 5px;margin-bottom: 0.3cm;padding:4px;padding-left:10px"><i class="fa fa-ban" aria-hidden="true"></i>copyrighted</div>
+            <div class="detailed-info" style="display:block;color:aliceblue;text-align: center;"><i class="fa fa-share" aria-hidden="true"></i></i>shareurl</div>
+            <div class="share-holder">
+                <div class="rin-tr"></div>
+                <div class="hy-card-zone">
+                    <div id="vcomments"></div>
+                </div>
+                <div class="rin-tr"></div>
+                <div class="rin-card-part" id="footer">
+                    <div class="rin-card-content">©2022 BroXun | Made with love by <a href="tel:1145141919810">BroXun
+                        </a> | BG: <a href="https://www.pixiv.net/artworks/94655957" target="_blank">Pixiv</a></div>
+                </div>
             </div>
-            <div class="rin-tr"></div>
-            <div class="rin-card-part" id="footer">
-                <div class="rin-card-content">©2022 BroXun | Made with love by <a href="tel:1145141919810">BroXun
-                    </a> | BG: <a href="https://www.pixiv.net/artworks/94655957" target="_blank">Pixiv</a></div>
-            </div>
-        </div>
     </main>
     <link rel="stylesheet" href="mdui/css/mdui.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/detaile.css">
     <style>
-        .hy-card-zone{
+        ::before{
+            margin-right:0.1cm;
+        }
+
+        div.detailed-info {
+            display: inline;
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+
+        .hy-card-zone {
             border-radius: 10px;
             padding: 1rem 1rem;
             margin: 1.5rem;
-            width:85%;
+            width: 85%;
             /*max-width: ;*/
             color: #cccccc88;
         }
@@ -234,7 +255,7 @@
         }
 
         * {
-            -webkit-print-color-adjust: exact
+            -webkit-print-color-adjust: exact 
         }
 
         @media screen and (min-width:914px) {
@@ -274,16 +295,26 @@
         }
     </style>
     <script>
-        document.ObjId = window.opener.data.id;
+        document.ObjId = window.opener.id;
         function getLocalTime(mS) {
             return new Date(parseInt(mS)).toLocaleString('chinese', { hour12: false }).replace(/:\d{1,2}$/, ' ').replace(/24:/, "00:");
         }
         window.onload = function () {
-            document.title = "BroXun: " + window.opener.data.title;
-            document.getElementById("detailedinfo").innerHTML = "作者: " + window.opener.data.author.replace("Hydi", "BroXun") + " " + "标签: " + String(window.opener.data.tags).replace(/,/g," | ") + " " + "时间: " + Math.floor((window.opener.data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(window.opener.data.timestamp) + " " + window.opener.data.views + "阅读（重复统计）";
-            document.getElementById("title").innerHTML = window.opener.data.title;
-            document.getElementById("content").innerHTML = window.opener.data.content;
+            var data = window.opener.data;
+            document.title = "BroXun: " + data.title;
+            //document.getElementById("detailedinfo").innerHTML = "作者: " + data.author.replace("Hydi", "BroXun") + " " + "标签: " + String(data.tags).replace(/,/g, " | ") + " " + "时间: " + Math.floor((data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(data.timestamp) + " " + data.views + "阅读（重复统计）";
+            document.getElementById("title").innerHTML = data.title;
+            document.getElementById("content").innerHTML = data.content;
+            document.getElementsByClassName("detailedinfo")[0].innerHTML = document.getElementsByClassName("detailedinfo")[0].innerHTML.replace("author",data.author.replace("Hydi","BroXun")).replace("tags",String(data.tags).replace(","," | ")).replace("edittime",Math.floor((data.edit_time) / 6000) / 10 + "分钟").replace("releasedate",getLocalTime(data.timestamp)).replace("view",data.views).replace("words",document.getElementById("content").innerText.length);
             console.log("script successfully run");
+            document.getElementsByClassName("detailed-info")[7].innerHTML = document.getElementsByClassName("detailed-info")[7].innerHTML.replace("shareurl","share this page at " + window.location.host + "/fetch?id=" + document.ObjId + "&&&");
+            if(data.copyright == true){
+                document.getElementsByClassName("detailed-info")[6].innerHTML = document.getElementsByClassName("detailed-info")[6].innerHTML.replace("copyrighted","本文著作权归作者所有，未经许可禁止用于商业用途");
+                document.getElementsByClassName("fa-ban")[0].style.color = "red";
+            }
+            else{
+                //
+            }
         }
     </script>
     <script>
