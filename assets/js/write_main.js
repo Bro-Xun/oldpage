@@ -19,7 +19,7 @@ var t_s;
 var wtf = document.getElementById("wtf");
 var preview = document.getElementsByClassName("preview")[0];
 var login = document.getElementsByClassName("login")[0];
-const User = "Hydi" //!--
+var User = ""; //!--
 //var userId;
 /*var xhr=new XMLHttpRequest;
 xhr.open("GET","https://diary.hydroxyl-ion.rthe.xyz/",false);
@@ -33,6 +33,7 @@ window.onload = function () {
 		document.getElementById("lgout").style.display = "";
 		document.getElementById("lgin").style.display = "none";
 		document.getElementsByClassName("glyphicon-log-in1")[0].innerHTML = "欢迎" + AV.User.current().attributes.username + "点击退出登录";
+		User = AV.User.current().attributes.username;
 	}
 }
 
@@ -201,15 +202,19 @@ wtf.onclick = function () {
 			location.reload();
 		});
 	}
-	else{
+	else {
 		alert("please release blog after loading your account\nremmember to save what you\'ve written as we will have this page reloaded after you log in");
 	}
 }
 
 preview.onclick = function () {
-	pre_save();
-	all = { author: User, tags: tags, copyright: document.getElementById("c").checked, title: title, timestamp: Number(save_time), edit_time: Number(save_time - load_time), content: marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'") };
-	window.open("zdt-temp.html");
+	if (User != "") {
+		pre_save();
+		all = { author: User, tags: tags, copyright: document.getElementById("c").checked, title: title, timestamp: Number(save_time), edit_time: Number(save_time - load_time), content: marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'") };
+		window.open("zdt-temp.html");
+	} else {
+		//
+	}
 }
 
 function get_time() {		//进入时获取时间
