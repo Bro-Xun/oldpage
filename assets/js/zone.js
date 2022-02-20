@@ -25,12 +25,7 @@ window.onload = function () {
 					console.info("1");
 					document.getElementsByClassName("main")[0].innerHTML = "您请求的对象不存在，换一个试试吧~";
 				} else {
-					data = det[0].attributes;
 					console.info("2");
-					window.id = det[0].id;
-					document.getElementsByClassName("main")[0].innerHTML = "解析成功，正在跳转~";
-					window.open("zdt.html");
-					document.getElementsByClassName("main")[0].innerHTML = document.getElementsByClassName("main")[0].innerHTML + "<a OnClick=\"window.open(\'zdt.html\')\">若没有跳转，请点击这里</a>";
 				}
 			});
 		} else {
@@ -46,9 +41,6 @@ function newpage(list_number) {
 	clickscount.save();
 	var data = dat[list_number];
 	window.open("zdt.html");
-	document.getElementById("ti").innerHTML = data["title"];
-	document.getElementById("detd").innerHTML = "作者: " + data["author"] + " " + "标签: " + data["tags"] + " " + "时间: " + Math.floor((data["edit_time"]) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(data["timestamp"]) + " " + data["views"] + "阅读（重复统计）"
-	document.getElementById("co").innerHTML = data["content"];
 	window.data = data;
 	window.id = data.id;
 }
