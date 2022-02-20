@@ -5,7 +5,7 @@ window.onload = function () {
 	if (window.location.search == "") {
 		//
 	} else {
-		var UsefulRequest = ((window.location.search + "?").split("?")[1] + "&user=BroXun").match(/id=[^>]+/)[0].split("&")[0];
+		var UsefulRequest = ((window.location.search + "?").split("?")[1] + "&user=BroXun").match(/user=[^>]+/)[0].split("&")[0];
 		console.log(UsefulRequest);
 		if (UsefulRequest != "" && UsefulRequest != "user=BroXun") {
 			var request = UsefulRequest.split("=")[1];
