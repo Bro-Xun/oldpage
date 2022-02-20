@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>撰写</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!--<script src="http://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+	<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+	<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<style type="text/css">
+		body,
+		td,
+		th {
+			color: #ffffff;
+			cursor: url("img/mouse.ico"), auto;
+		}
+
+		#myppt {
+			margin-top: -20px;
+
+		}
+
+		body {
+			background-color: #000000;
+		}
+
+		.lk a:link {
+			color: white;
+			cursor: url("img/mouse.ico"), auto;
+			text-decoration: none
+		}
+
+		.lk a:visited {
+			color: white;
+			cursor: url("img/mouse.ico"), auto;
+			text-decoration: none
+		}
+
+		.lk a:hover {
+			color: grey;
+			cursor: url("img/mouse.ico"), auto;
+			text-decoration: none
+		}
+
+		.lk a:active {
+			color: darkgray;
+			cursor: url("img/mouse.ico"), auto;
+			text-decoration: none
+		}
+
+		::selection {
+			background: pink;
+			cursor: url("img/mouse.ico"), auto;
+			color: blue;
+		}
+
+		::-moz-selection {
+			background: pink;
+			cursor: url("img/mouse.ico"), auto;
+			color: blue;
+		}
+
+		::-webkit-selection {
+			background: pink;
+			cursor: url("img/mouse.ico"), auto;
+			color: blue;
+		}
+
+		.btn {
+			cursor: url("img/mouse.ico"), auto;
+		}
+
+		.btn:active {
+			cursor: url("img/mouse_click.ico"), auto;
+		}
+
+		.btn:hover {
+			cursor: url("img/mouse.ico"), auto;
+		}
+	</style>
+	<!--<link rel="stylesheet" href="aplayer/APlayer.min.css">-->
+</head>
+
+<body>
+	<ul class="nav navbar-nav navbar-right">
+		<li id="lgin"><a data-toggle="modal" data-target="#login" href=""><span
+					class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+	</ul>
+	<ul>
+		<li style="display: none;" id="lgout"><a data-toggle="modal" href=""
+				onclick="AV.User.logOut();location.reload();"><span class="glyphicon glyphicon-log-in1"></span></a></li>
+	</ul>
+	<!-- 登录--窗口--model -->
+	<div id="login" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button class="close" onclick="document.getElementById('login').style.display='none';">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div class="modal-title">
+					<h3 class="text-center">登录</h3>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="">用户名</label>
+						<input id="usid" class="form-control" type="text" placeholder="">
+					</div>
+					<div class="form-group">
+						<label for="">密码</label>
+						<input id="pw" class="form-control" type="password" placeholder="">
+					</div>
+					<div class="text-right">
+						<button class="btn btn-primary login">登录</button>
+						<button class="btn btn-danger"
+							onclick="document.getElementById('login').style.display='none';">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--ends-->
+	<div align="center">
+		<h2>zone&nbsp;</h2>
+		设为私密<input type="checkbox" id="private" class="btn" style="margin-right:2rem">
+		原创声明<input type="checkbox" id="c" class="btn" style="margin-right:2rem">
+		转载<input type="checkbox" id="f" class="btn" style="margin-right:2rem">
+		<!--
+		mood <select id="mood" class="btn" style="margin-right:2rem">
+			<optgroup label="Active">
+				<option value="0">hopeful</option>
+				<option value="1">happy</option>
+				<option value="2">calm</option>
+				<option value="3">proud</option>
+				<option value="4">willing</option>
+			</optgroup>
+			<optgroup label="Negative">
+				<option value="5">angry</option>
+				<option value="6">hopeless</option>
+				<option value="7">fearful</option>
+				<option value="8">sorry</option>
+				<option value="9">sad</option>
+				<option value="10">bored</option>
+				<option value="11">regreted</option>
+			</optgroup>
+			<optgroup label="Unknown">
+				<option value="12">*keep it a secret*</option>
+				<option value="13" selected="selected">choose one</option>
+			</optgroup>
+		</select>-->
+		<p align="left">开始时间: <text id="start_time"></text></p>
+		<p align="left">保存时间:
+			<text id="finish_time"></text>
+		</p>
+		<hr color="grey">
+		<p>
+		<fieldset>
+			<legend>控件</legend>
+			<div class="btn">
+				<input type="button" value=" 图片 " onClick="u()">
+				<input type="button" value=" 加粗 " onClick="b()">
+				<input type="button" value=" 删除线 " onClick="del()">
+				<input type="button" value=" 高光 " onClick="mark()">
+				<input type="button" value=" 引用 " onClick="blockquote()"><br>
+				<input type="button" value=" 注释 " onClick="abbr()">
+				<input type="button" value=" 链接 " onClick="p()">
+				<input type="button" value=" 标 签 " onClick="h4()">
+				<input type="button" value=" 上标 " onClick="sub()">
+				<input type="button" value=" 下标 " onClick="sup()">
+			</div>
+		</fieldset>
+		</p>
+		<div class="btn" style="line-height: 1.75;border: 1px solid #323232;border-radius: 4px;max-width:76%">
+			<div><input name="nick" type="text" size="120" maxlength="15" id="title" class="btn" placeholder="标题"
+					style="border:0;background-color: black;font-family:微软雅黑;font-size:16px;color:gray;outline: none;border-bottom-style: dotted;border-bottom-color: #323232;position: relative;width: 75%;padding: 10px 5px;">
+			</div>
+			<textarea id="content" rows="20" cols="120" onChange="content_change()"
+				style="border-color: black;color: white;outline: none;font-family: 微软雅黑;background-color: black;font-size:16px;position: relative;max-width: 75%;min-width: 75%;min-height: 20rem; padding: 10px 5px;"
+				placeholder="正文"></textarea>
+		</div>
+		<div style="margin-top: 1rem">
+			<input type="button" value="Save"
+				style="padding: 5px 10px;background-color: pink;border-radius: 4px;border:0;outline: none;border-color: aqua"
+				onClick="pre_save()"> | <input type="button" value="Send" id="wtf"
+				style="padding: 5px 10px;background-color: pink;border-radius: 4px;border-color: aqua">
+			| <input type="button" value="Preview" class="preview"
+				style="padding: 5px 10px;background-color: pink;border-radius: 4px;border-color: aqua">
+		</div>
+		<progress max="100" value="0" id="saving"></progress>
+		<!--<div id="aplayer"></div>-->
+	</div>
+	<br>
+	<br>
+	<hr color="white">
+	<p align="center">动态 · 内部版 v0.0.0.1 &copy;2021 Hydi Co., Ltd. All right reserved.</p>
+	<div class="lk" align="center">
+		<b><a href="http://love.wazf.top/S94" target="_blank">滑ICP备 5201314号</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+				target="_blank" href="https://www.114514.com.cn/">滑稽公安备案号114513</a></b>
+	</div>
+	<script src="js/Marked.js"></script>
+	<script>
+		var rendererMD = new marked.Renderer();
+		marked.setOptions({
+			renderer: rendererMD,
+			gfm: true,
+			tables: true,
+			breaks: false,
+			pedantic: false,
+			sanitize: false,
+			smartLists: true,
+			smartypants: false
+		});
+		marked.setOptions({
+			highlight: function (code) {
+				return hljs.highlightAuto(code).value;
+			}
+		});
+	</script>
+	<script src="https://code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+	<script>
+		AV.init({
+			appId: "AtjKLXsruVYpIWpb73Pt6kQx-gzGzoHsz",
+			appKey: "aWDemfpj3XbDKo2Ry23iIcA1",
+			serverURL: "https://atjklxsr.lc-cn-n1-shared.com"
+		});
+		//const { Query, User } = AV;
+		localStorage.setItem('debug', 'leancloud*');
+		const Zone = AV.Object.extend('Zone');
+		const zone = new Zone();
+	</script>
+	<script src="js/write_main.js"></script>
+	<!--<script src="aplayer/APlayer.min.js"></script>-->
+</body>
+
+</html>
