@@ -26,6 +26,8 @@ xhr.open("GET","https://diary.hydroxyl-ion.rthe.xyz/",false);
 xhr.send();
 var dat=JSON.parse(xhr.response);*/
 window.onload = function () {
+	load_time = new Date();
+	document.getElementById("start_time").innerHTML = load_time;
 	if (AV.User.current() == null) {
 		alert("log in please\nvisitor account:\n UserId:visitor\n nopassword");
 	}
@@ -215,11 +217,6 @@ preview.onclick = function () {
 	} else {
 		//
 	}
-}
-
-function get_time() {		//进入时获取时间
-	load_time = new Date();
-	document.getElementById("start_time").innerHTML = load_time;
 }
 
 function u() {
