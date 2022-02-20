@@ -25,34 +25,34 @@ const User = "Hydi" //!--
 xhr.open("GET","https://diary.hydroxyl-ion.rthe.xyz/",false);
 xhr.send();
 var dat=JSON.parse(xhr.response);*/
-window.onload = function(){
-	if(AV.User.current() == null){
+window.onload = function () {
+	if (AV.User.current() == null) {
 		alert("log in please\nvisitor account:\n UserId:visitor\n nopassword");
 	}
-	else{
-		document.getElementById("lgot").style.display = "block";
+	else {
+		document.getElementById("lgot").style.display = "";
 		document.getElementById("lgin").style.display = "none";
 		document.getElementsByClassName("glyphicon-log-in1")[0].innerHTML = "欢迎" + AV.User.current().attributes.username + "点击退出登录";
 	}
 }
 
-login.onclick = function(){
+login.onclick = function () {
 	var userid = document.getElementById("usid").value;
 	var password = document.getElementById("pw").value;
-	if(userid != ""){
-		AV.User.logIn(userid,password).then((user) => {
+	if (userid != "") {
+		AV.User.logIn(userid, password).then((user) => {
 			alert("200");
 			location.reload();
-		  }, (error) => {
+		}, (error) => {
 			AV.User.loginWithEmail('tom@leancloud.rocks', 'cat!@#123').then((user) => {
 				alert("200");
 				location.reload();
-			  }, (error) => {
+			}, (error) => {
 				alert("wrong UserId or password");
-			  });
-		  });
+			});
+		});
 	}
-	else{
+	else {
 		alert("give your UserName or Email Address")
 	}
 
@@ -185,25 +185,30 @@ wtf.onclick = function () {
 	zone.set('timestamp', Number(save_time));
 	zone.set('edit_time', Number(save_time - load_time));
 	//zone.set('',);
-	if(private == true){
-		var acl = new AV.ACL();
-		acl.setWriteAccess(AV.User.current(), true);
-		acl.setReadAccess(AV.User.current(), true);
-		zone.setACL(acl);
+	if (AV.User.current() != null) {
+		if (private == true) {
+			var acl = new AV.ACL();
+			acl.setWriteAccess(AV.User.current(), true);
+			acl.setReadAccess(AV.User.current(), true);
+			zone.setACL(acl);
+		}
+		else {
+			//
+		}
+		zone.save().then((Zone) => {
+			alert("提交成功！");
+			console.log('保存成功。objectId：${todo.id}');
+			location.reload();
+		});
 	}
 	else{
-		//
+		alert("please release blog after loading your account\nremmember to save what you\'ve written as we will have this page reloaded after you log in");
 	}
-	zone.save().then((Zone) => {
-		alert("提交成功！");
-		console.log('保存成功。objectId：${todo.id}');
-		location.reload();
-	});
 }
 
 preview.onclick = function () {
 	pre_save();
-	all = {author:User,tags:tags,copyright:document.getElementById("c").checked,title:title,timestamp:Number(save_time),edit_time:Number(save_time - load_time),content:marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'")};
+	all = { author: User, tags: tags, copyright: document.getElementById("c").checked, title: title, timestamp: Number(save_time), edit_time: Number(save_time - load_time), content: marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'") };
 	window.open("zdt-temp.html");
 }
 
