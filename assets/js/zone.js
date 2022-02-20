@@ -26,6 +26,7 @@ function newpage(list_number){
 	document.getElementById("detd").innerHTML="作者: "+data["author"]+" "+"标签: "+data["tags"]+" "+"时间: "+Math.floor((data["edit_time"])/6000)/10+"分钟"+" "+"日期: "+getLocalTime(data["timestamp"])+" "+data["views"]+"阅读（重复统计）"
 	document.getElementById("co").innerHTML=data["content"];
 	window.data = data
+	window.id = data.id
 }
 
 function showall(){
