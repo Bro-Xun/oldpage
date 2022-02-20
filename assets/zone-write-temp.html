@@ -82,11 +82,13 @@
 	<!--<link rel="stylesheet" href="aplayer/APlayer.min.css">-->
 </head>
 
-<body onLoad="get_time()">
+<body>
 	<ul class="nav navbar-nav navbar-right">
         <li id="lgin"><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-        <li style="display: none;" id="lgout"><a data-toggle="modal" href="" onclick="AV.User.logOut();location.reload();"><span class="glyphicon glyphicon-log-in1"></span></a></li>
     </ul>
+	<ul>
+	<li style="display: none;" id="lgout"><a data-toggle="modal" href="" onclick="AV.User.logOut();location.reload();"><span class="glyphicon glyphicon-log-in1"></span></a></li>
+	</ul>
     <!-- 登录--窗口--model -->
     <div id="login" class="modal fade">
         <div class="modal-dialog">
