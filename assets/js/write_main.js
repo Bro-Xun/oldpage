@@ -14,32 +14,73 @@ var i;
 var long_date;
 var t_h;
 var t_m;
-var tags=[];
+var tags = [];
 var t_s;
-var wtf = document.getElementById("wtf")
+var wtf = document.getElementById("wtf");
+var preview = document.getElementsByClassName("preview")[0];
+var login = document.getElementsByClassName("login")[0];
+const User = "Hydi" //!--
 //var userId;
 /*var xhr=new XMLHttpRequest;
 xhr.open("GET","https://diary.hydroxyl-ion.rthe.xyz/",false);
 xhr.send();
 var dat=JSON.parse(xhr.response);*/
-function content_change(){
-	var title=document.getElementById("title").value;
-		if(title==""){
-			title="未命名文档";
-		}
-		else{
-			//
-		}
-		document.title=title+"*";
-	if (save_once==false){
-		
+window.onload = function(){
+	if(AV.User.current() == null){
+		alert("log in please\nvisitor account:\n UserId:visitor\n nopassword");
 	}
 	else{
-		save = false;
-		document.getElementById("saving").value=0;
+		document.getElementById("lgot").style.display = "block";
+		document.getElementById("lgin").style.display = "none";
+		document.getElementsByClassName("glyphicon-log-in1")[0].innerHTML = "欢迎" + AV.User.current().attributes.username + "点击退出登录";
 	}
 }
-function pre_save(){		//将关键信息写入all对象
+
+login.onclick = function(){
+	var userid = document.getElementById("usid").value;
+	var password = document.getElementById("pw").value;
+	if(userid != ""){
+		AV.User.logIn(userid,password).then((user) => {
+			alert("200");
+			location.reload();
+		  }, (error) => {
+			AV.User.loginWithEmail('tom@leancloud.rocks', 'cat!@#123').then((user) => {
+				alert("200");
+				location.reload();
+			  }, (error) => {
+				alert("wrong UserId or password");
+			  });
+		  });
+	}
+	else{
+		alert("give your UserName or Email Address")
+	}
+
+}
+
+function content_change() {
+	var title = document.getElementById("title").value;
+	if (title == "") {
+		title = "未命名文档";
+	}
+	else {
+		//
+	}
+	document.title = title + "*";
+	if (save_once == false) {
+		//
+	}
+	else {
+		save = false;
+		document.getElementById("saving").value = 0;
+	}
+}
+
+function pre_save() {		//将关键信息写入all对象
+	wtf.disabled = true;
+	preview.disabled = true;
+	document.getElementsByTagName("textarea")[0].disabled = true;
+	document.getElementById("title").disabled = true;
 	private = document.getElementById("private").checked;
 	//mood = document.getElementById("mood").value;
 	title = document.getElementById("title").value;
@@ -66,134 +107,166 @@ function pre_save(){		//将关键信息写入all对象
 	}
 	long_date=exact_date+" "+t_h+":"+t_m+":"+t_s//+" "+userId;
 	switch (save_time.getDay()) {
-    case 0:
-        week = "星期天";
-        break;
-    case 1:
-        week = "星期一";
-         break;
-    case 2:
-        week = "星期二";
-         break;
-    case 3:
-        week = "星期三";
-         break;
-    case 4:
-        week = "星期四";
-         break;
-    case 5:
-        week = "星期五";
-         break;
-    case 6:
-        week = "星期六";
+	case 0:
+		week = "星期天";
+		break;
+	case 1:
+		week = "星期一";
+		 break;
+	case 2:
+		week = "星期二";
+		 break;
+	case 3:
+		week = "星期三";
+		 break;
+	case 4:
+		week = "星期四";
+		 break;
+	case 5:
+		week = "星期五";
+		 break;
+	case 6:
+		week = "星期六";
 	}*/
 	//all = {timestamp:save_time.getTime(),time_start:load_time.getTime(),Date:exact_date,week_name:week,private:private,mood:mood,title:title,content:""};
-	if (save_once==false){
+	if (save_once == false) {
 		save_once = true;
 		save = true;
 	}
-	else{
+	else {
 		save = true;
 	}
 	document.getElementById("finish_time").innerHTML = save_time;
-	i=0;
-	var stop = setInterval("progress_gain(10,10)",150);
-	if(title==undefined||title=="未命名文档"){
-		document.title="未命名文档";
+	i = 0;
+	var stop = setInterval("progress_gain(10,10)", 150);
+	if (title == undefined || title == "未命名文档") {
+		document.title = "未命名文档";
 	}
-	else{
-		document.title=title;
-		tags=content.match(/\$[^\$]+\$+/g);
-		if(tags==null){
-			tags=["未指定标签"];
+	else {
+		document.title = title;
+		tags = content.match(/\$[^\$]+\$+/g);
+		if (tags == null) {
+			tags = ["未指定标签"];
 		}
-		else{
-			for (var i=0;i<tags.length;i++){
-         	tags[i]=tags[i].replace(/\$/g,"");
-         	}
-        	console.log(tags);
+		else {
+			for (var i = 0; i < tags.length; i++) {
+				tags[i] = tags[i].replace(/\$/g, "");
+			}
+			console.log(tags);
 		}
+	}
+	wtf.disabled = "";
+	preview.disabled = "";
+	document.getElementsByTagName("textarea")[0].disabled = "";
+	document.getElementById("title").disabled = "";
+}
+
+function progress_gain(step, time) {		//将进度条增加
+	document.getElementById('saving').value = document.getElementById('saving').value + step;
+	i = i + 1;
+	if (i >= time - 1) {
+		clearInterval(stop);
+	}
+	else {
+		//
 	}
 }
-function progress_gain(step,time){		//将进度条增加
-	document.getElementById('saving').value = document.getElementById('saving').value + step;
-	i=i+1;
-	if (i>=time-1){
-		clearInterval(stop);
+
+wtf.onclick = function () {
+	pre_save();
+	var c11 = document.getElementById("c").checked;
+	var f11 = document.getElementById("f").checked;
+	zone.set('author', User);///
+	zone.set('content', marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'"));
+	zone.set('copyright', c11);
+	zone.set('title', title);
+	zone.set('tags', tags);
+	zone.set('forward', f11);
+	zone.set('timestamp', Number(save_time));
+	zone.set('edit_time', Number(save_time - load_time));
+	//zone.set('',);
+	if(private == true){
+		var acl = new AV.ACL();
+		acl.setWriteAccess(AV.User.current(), true);
+		acl.setReadAccess(AV.User.current(), true);
+		zone.setACL(acl);
 	}
 	else{
 		//
 	}
-}
-wtf.onclick = function(){
-	pre_save();
-	var c11 = document.getElementById("c").checked;
-	var f11 = document.getElementById("f").checked;
-	zone.set('author','Hydi');///
-	zone.set('content',marked((content.replace(/\"/g,"'")).replace(/\$[^\$]+\$+/g,"")).replace(/\"/g,"'"));
-	zone.set('copyright',c11);
-	zone.set('title',title);
-	zone.set('tags',tags);
-	zone.set('forward',f11);
-	zone.set('timestamp',Number(save_time));
-	zone.set('edit_time',Number(save_time-load_time));
-	//zone.set('',);
 	zone.save().then((Zone) => {
 		alert("提交成功！");
 		console.log('保存成功。objectId：${todo.id}');
 		location.reload();
 	});
 }
-function get_time(){		//进入时获取时间
+
+preview.onclick = function () {
+	pre_save();
+	all = {author:User,tags:tags,copyright:document.getElementById("c").checked,title:title,timestamp:Number(save_time),edit_time:Number(save_time - load_time),content:marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'")};
+	window.open("zdt-temp.html");
+}
+
+function get_time() {		//进入时获取时间
 	load_time = new Date();
 	document.getElementById("start_time").innerHTML = load_time;
 }
-function u(){
+
+function u() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "![name](url)"
 	document.getElementById("content").value = content_edit;
 }
-function b(){
+
+function b() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "*text*"
 	document.getElementById("content").value = content_edit;
 }
-function del(){
+
+function del() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "**text**"
 	document.getElementById("content").value = content_edit;
 }
-function mark(){
+
+function mark() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "<mark></mark>"
 	document.getElementById("content").value = content_edit;
 }
-function blockquote(){
+
+function blockquote() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "> "
 	document.getElementById("content").value = content_edit;
 }
-function abbr(){
+
+function abbr() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "<abbr title=''></abbr>"
 	document.getElementById("content").value = content_edit;
 }
-function p(){
+
+function p() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "[name](target)"
 	document.getElementById("content").value = content_edit;
 }
-function h4(){
+
+function h4() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "$tag1$ $tag2$ $tag3$"
 	document.getElementById("content").value = content_edit;
 }
-function sub(){
+
+function sub() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "<sub></sub>"
 	document.getElementById("content").value = content_edit;
 }
-function sup(){
+
+function sup() {
 	content_edit = document.getElementById("content").value;
 	content_edit = content_edit + "<sup></sup>"
 	document.getElementById("content").value = content_edit;
