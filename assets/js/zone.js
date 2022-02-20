@@ -7,7 +7,7 @@ window.onload = function () {
 	} else {
 		var UsefulRequest = ((window.location.search + "?").split("?")[1] + "&user=BroXun").match(/user=[^>]+/)[0].split("&")[0];
 		console.log(UsefulRequest);
-		if (UsefulRequest != "" && UsefulRequest != "user=BroXun") {
+		if (UsefulRequest != "") {
 			var request = UsefulRequest.split("=")[1];
 			zone.equalTo('author', request);
 			zone.limit(1000);
