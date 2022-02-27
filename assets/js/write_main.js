@@ -63,8 +63,11 @@ login.onclick = function () {
 
 document.getElementsByClassName("politics")[0].onclick = function() {
 	if(document.getElementsByClassName("politics")[0].checked == true){
-		document.getElementsByClassName("politics-r18")[0].checked = false;
 		document.getElementsByClassName("pol-r18-holder")[0].style.display = "inline";
+	}
+	else{
+		document.getElementsByClassName("politics-r18")[0].checked = false;
+		document.getElementsByClassName("pol-r18-holder")[0].style.display = "none";
 	}
 }
 
