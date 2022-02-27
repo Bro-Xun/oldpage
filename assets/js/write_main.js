@@ -29,7 +29,7 @@ window.onload = function () {
 	load_time = new Date();
 	document.getElementById("start_time").innerHTML = load_time;
 	if (AV.User.current() == null) {
-		alert("log in please\nvisitor account:\n UserId:visitor\n nopassword");
+		alert("log in please\nvisitor account:\n UserId:visitor\n 123456");
 	}
 	else {
 		document.getElementById("lgout").style.display = "";
@@ -47,7 +47,7 @@ login.onclick = function () {
 			alert("200");
 			location.reload();
 		}, (error) => {
-			AV.User.loginWithEmail('tom@leancloud.rocks', 'cat!@#123').then((user) => {
+			AV.User.loginWithEmail(userid,password).then((user) => {
 				alert("200");
 				location.reload();
 			}, (error) => {
@@ -59,6 +59,19 @@ login.onclick = function () {
 		alert("give your UserName or Email Address")
 	}
 
+}
+
+document.getElementsByClassName("politics")[0].onclick = function() {
+	if(document.getElementsByClassName("politics")[0].checked == true){
+		document.getElementsByClassName("politics-r18")[0].checked = false;
+		document.getElementsByClassName("pol-r18-holder")[0].style.display = "inline";
+	}
+}
+
+document.getElementsByClassName("politics-r18")[0].onclick = function() {
+	if(document.getElementsByClassName("politics-r18")[0].checked == false){
+		document.getElementsByClassName("pol-r18-holder")[0].style.display = "none";
+	}
 }
 
 function content_change() {
@@ -180,7 +193,19 @@ wtf.onclick = function () {
 	var c11 = document.getElementById("c").checked;
 	var f11 = document.getElementById("f").checked;
 	zone.set('author', User);///
-	zone.set('content', marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'"));
+	var con = marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'");
+	if(document.getElementsByClassName("politics")[0].checked == true){
+		if(document.getElementsByClassName("politics-r18")[0].checked == true){
+			con = "<blockquote class='pol-r18-warn'></blockquote>" + con;
+		}
+		else{
+			con = "<blockquote class='pol-warn'></blockquote>" + con;
+		}
+	}
+	else{
+		//
+	}
+	zone.set('content', con);
 	zone.set('copyright', c11);
 	zone.set('title', title);
 	zone.set('tags', tags);
@@ -212,7 +237,16 @@ wtf.onclick = function () {
 preview.onclick = function () {
 	if (User != "") {
 		pre_save();
-		all = { author: User, tags: tags, copyright: document.getElementById("c").checked, title: title, timestamp: Number(save_time), edit_time: Number(save_time - load_time), content: marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'") };
+		var con = marked((content.replace(/\"/g, "'")).replace(/\$[^\$]+\$+/g, "")).replace(/\"/g, "'");
+		if(document.getElementsByClassName("politics")[0].checked == true){
+			if(document.getElementsByClassName("politics-r18")[0].checked == true){
+				con = "<blockquote class='pol-r18-warn'></blockquote>" + con;
+			}
+			else{
+				con = "<blockquote class='pol-warn'></blockquote>" + con;
+			}
+		}
+		all = { author: User, tags: tags, copyright: document.getElementById("c").checked, title: title, timestamp: Number(save_time), edit_time: Number(save_time - load_time), content: con};
 		window.open("zdt-temp.html");
 	} else {
 		//
