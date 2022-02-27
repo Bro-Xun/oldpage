@@ -54,10 +54,23 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/detaile.css">
     <style>
-        #vcomments::after{
-            content:'Here is going to be a Valine Comments\' Bar after you releasing this page';
+        blockquote.pol-warn{
+            background: #bcf1186b;
+            border-left: 5px solid #ffe650;
+        }
+        blockquote.pol-warn::after{
+            content:'提示：本条目包含或可导出政治敏感话题，即使作者没有将此文设定版权保护，也不应在PRC境内进行分享活动，以免损害个人资产或人身安全。';
         }
 
+        blockquote.pol-r18-warn{
+            background: #f15e5e7a;
+            border-left: 5px solid #ff2323;
+        }
+
+        blockquote.pol-r18-warn::after{
+            content:'警告：本条目包含非PRC当局官方政治立场，严禁在PRC境内进行任何形式的分享 传播活动，否则造成一切后果由个人自行承担。';
+        }
+        
         ::before{
             margin-right:0.1cm;
         }
