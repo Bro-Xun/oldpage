@@ -30,14 +30,18 @@
                 <span style="margin: 0.2cm;"><i class="fa fa-clock-o" aria-hidden="true"></i>releasedate</span>
                 <span style="margin: 0.2cm;"><i class="fa fa-eye" aria-hidden="true"></i>view</span>
                 <span style="margin: 0.2cm;"><i class="fa fa-font" aria-hidden="true"></i>words</span>
-    </div>
+            </div>
             <div class="rin-tr"></div>
             <div id="content">
                 <p>此处是段落一</p>
                 <p>此处是段落二</p>
             </div>
-            <div class="detailed-info" style="display:block;color:black;background:wheat;padding:0.1cm;border-radius: 5px;margin-bottom: 0.3cm;padding:4px;padding-left:10px"><i class="fa fa-ban" aria-hidden="true"></i>copyrighted</div>
-            <div class="detailed-info" style="display:block;color:aliceblue;text-align: center;"><i class="fa fa-share" aria-hidden="true"></i></i>shareurl</div>
+            <div class="detailed-info"
+                style="display:block;color:black;background:wheat;padding:0.1cm;border-radius: 5px;margin-bottom: 0.3cm;padding:4px;padding-left:10px">
+                <i class="fa fa-ban" aria-hidden="true"></i>copyrighted
+            </div>
+            <div class="detailed-info" style="display:block;color:aliceblue;text-align: center;"><i class="fa fa-share"
+                    aria-hidden="true"></i></i>shareurl</div>
             <div class="share-holder">
                 <div class="rin-tr"></div>
                 <div class="hy-card-zone">
@@ -54,27 +58,49 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/detaile.css">
     <style>
-        blockquote.pol-warn{
+        a.tags,
+        a.tags:visited {
+            background-color: #fee9cc;
+            color: darkgreen;
+            line-height: 18px;
+            font-size: 12px;
+            padding: 2px 7px;
+            margin: 1px 2px;
+            text-decoration: none;
+            border-radius: 1.5px;
+        }
+
+        a.tags:hover {
+            background-color: darkgrey;
+        }
+
+        a.tags:active {
+            background-color: #222;
+            color: #dfa;
+        }
+
+        blockquote.pol-warn {
             background: #bcf1186b;
             border-left: 5px solid #ffe650;
         }
-        blockquote.pol-warn::after{
+
+        blockquote.pol-warn::after {
             color: yellow;
-            content:'提示：本条目包含或可导出政治敏感话题，即使作者没有将此文设定版权保护，也不应在PRC境内进行分享活动，以免损害个人资产或人身安全。';
+            content: '提示：本条目包含或可导出政治敏感话题，即使作者没有将此文设定版权保护，也不应在PRC境内进行分享活动，以免损害个人资产或人身安全。';
         }
 
-        blockquote.pol-r18-warn{
+        blockquote.pol-r18-warn {
             background: #f15e5e7a;
             border-left: 5px solid #ff2323;
         }
 
-        blockquote.pol-r18-warn::after{
+        blockquote.pol-r18-warn::after {
             color: yellow;
-            content:'警告：本条目包含非PRC当局官方政治立场，严禁在PRC境内进行任何形式的分享 传播活动，否则造成一切后果由个人自行承担。';
+            content: '警告：本条目包含非PRC当局官方政治立场，严禁在PRC境内进行任何形式的分享 传播活动，否则造成一切后果由个人自行承担。';
         }
-        
-        ::before{
-            margin-right:0.1cm;
+
+        ::before {
+            margin-right: 0.1cm;
         }
 
         div.detailed-info {
@@ -276,7 +302,7 @@
         }
 
         * {
-            -webkit-print-color-adjust: exact 
+            -webkit-print-color-adjust: exact
         }
 
         @media screen and (min-width:914px) {
@@ -321,21 +347,46 @@
             return new Date(parseInt(mS)).toLocaleString('chinese', { hour12: false }).replace(/:\d{1,2}$/, ' ').replace(/24:/, "00:");
         }
         window.onload = function () {
-            var data = window.opener.data;
-            document.title = data.author.replace("Hydi","BroXun") + ": " + data.title;
-            //document.getElementById("detailedinfo").innerHTML = "作者: " + data.author.replace("Hydi", "BroXun") + " " + "标签: " + String(data.tags).replace(/,/g, " | ") + " " + "时间: " + Math.floor((data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(data.timestamp) + " " + data.views + "阅读（重复统计）";
-            document.getElementById("title").innerHTML = data.title;
-            document.getElementById("content").innerHTML = data.content;
-            document.getElementById("detailedinfo").innerHTML = document.getElementById("detailedinfo").innerHTML.replace("author",data.author.replace("Hydi","BroXun")).replace("tagss",String(data.tags).replace(/,/g," | ")).replace("edittime",Math.floor((data.edit_time) / 6000) / 10 + "分钟").replace("releasedate",getLocalTime(data.timestamp)).replace("view",data.views).replace("words",document.getElementById("content").innerText.length);
-            console.log("script successfully run");
-            document.getElementsByClassName("detailed-info")[1].innerHTML = document.getElementsByClassName("detailed-info")[1].innerHTML.replace("shareurl","share this page at " + window.location.host + "/fetch?id=" + document.ObjId + "&&&");
-            if(data.copyright == true){
-                document.getElementsByClassName("detailed-info")[0].innerHTML = document.getElementsByClassName("detailed-info")[0].innerHTML.replace("copyrighted","本文著作权归作者所有，未经许可禁止用于商业用途");
-                document.getElementsByClassName("fa-ban")[0].style.color = "red";
+            var ls = !window.localStorage;
+            if (ls) {
+                var data = window.opener.data;
             }
-            else{
-                document.getElementsByClassName("detailed-info")[0].innerHTML = document.getElementsByClassName("detailed-info")[0].innerHTML.replace("copyrighted","本文无著作权相关限制");
-                document.getElementsByClassName("fa-ban")[0].style.color = "black";
+            else {
+                if (localStorage.getItem("data") == null) {
+                    var data = window.opener.data;
+                    if (ls == false) {
+                        localStorage.setItem("data", JSON.stringify(data));
+                    }
+                }
+
+                if (window.opener == null) {
+                    var data = JSON.parse(localStorage.getItem("data"));
+                }
+                else {
+                    var data = window.opener.data;
+                    document.title = data.author.replace("Hydi", "BroXun") + ": " + data.title;
+                    //document.getElementById("detailedinfo").innerHTML = "作者: " + data.author.replace("Hydi", "BroXun") + " " + "标签: " + String(data.tags).replace(/,/g, " | ") + " " + "时间: " + Math.floor((data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(data.timestamp) + " " + data.views + "阅读（重复统计）";
+                    document.getElementById("title").innerHTML = data.title;
+
+                    var taag = "";
+                    for (var i = 0; i < data.tags.length; i++) {
+                        taag += "<a class='tags' href='//" + window.location.host + "/zone.html?user=" + data.author + "&tag=" + encodeURI(data.tags[i]) + "' target='_blank'>" + data.tags[i] + "</a>";
+                    }
+
+                    document.getElementById("content").innerHTML = data.content;
+                    document.getElementById("detailedinfo").innerHTML = document.getElementById("detailedinfo").innerHTML.replace("author", data.author.replace("Hydi", "BroXun")).replace("tagss", taag).replace("edittime", Math.floor((data.edit_time) / 6000) / 10 + "分钟").replace("releasedate", getLocalTime(data.timestamp)).replace("view", data.views).replace("words", document.getElementById("content").innerText.length);
+                    console.log("script successfully run");
+                    document.getElementsByClassName("detailed-info")[1].innerHTML = document.getElementsByClassName("detailed-info")[1].innerHTML.replace("shareurl", "share this page at " + window.location.host + "/fetch?id=" + document.ObjId + "&&&");
+                    if (data.copyright == true) {
+                        document.getElementsByClassName("detailed-info")[0].innerHTML = document.getElementsByClassName("detailed-info")[0].innerHTML.replace("copyrighted", "本文著作权归作者所有，未经许可禁止用于商业用途");
+                        document.getElementsByClassName("fa-ban")[0].style.color = "red";
+                    }
+                    else {
+                        document.getElementsByClassName("detailed-info")[0].innerHTML = document.getElementsByClassName("detailed-info")[0].innerHTML.replace("copyrighted", "本文无著作权相关限制");
+                        document.getElementsByClassName("fa-ban")[0].style.color = "black";
+                    }
+
+                }
             }
         }
     </script>
