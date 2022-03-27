@@ -342,7 +342,10 @@
         }
     </style>
     <script>
-        document.ObjId = window.opener.id;
+        if(window.opener!=null){
+            document.ObjId = window.opener.id;
+        }
+        
         function getLocalTime(mS) {
             return new Date(parseInt(mS)).toLocaleString('chinese', { hour12: false }).replace(/:\d{1,2}$/, ' ').replace(/24:/, "00:");
         }
