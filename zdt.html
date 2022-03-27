@@ -367,6 +367,7 @@
                     }
                     else {
                         var data = window.opener.data;
+					}
                         document.title = data.author.replace("Hydi", "BroXun") + ": " + data.title;
                         //document.getElementById("detailedinfo").innerHTML = "作者: " + data.author.replace("Hydi", "BroXun") + " " + "标签: " + String(data.tags).replace(/,/g, " | ") + " " + "时间: " + Math.floor((data.edit_time) / 6000) / 10 + "分钟" + " " + "日期: " + getLocalTime(data.timestamp) + " " + data.views + "阅读（重复统计）";
                         document.getElementById("title").innerHTML = data.title;
@@ -391,7 +392,6 @@
                     }
                 }
             }
-        }
     </script>
     <script>
         new Valine({
