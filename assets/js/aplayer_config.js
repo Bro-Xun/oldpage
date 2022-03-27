@@ -13,6 +13,15 @@ const ap = new APlayer({
     lrcType: 3,
     audio: [
         {
+            name: '杀死那个石家庄人',
+            artist: '每日负能量 令人暖心',
+            url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/46.mp3',
+            cover: '',
+            lrc: 'assets/lyrics/46.lrc',
+            theme: '#ebd0c2'
+        },
+
+        {
             name: '落日与晚风',
             artist: 'IN-K&王忻辰&苏星婕',
             url: 'https://cdn.jsdelivr.net/gh/bro-xun/oldpage/assets/music/落日与晚风.mp3',
