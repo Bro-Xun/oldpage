@@ -20,6 +20,8 @@ var wtf = document.getElementById("wtf");
 var preview = document.getElementsByClassName("preview")[0];
 var login = document.getElementsByClassName("login")[0];
 var User = ""; //!--
+var ls = !localStorage;
+var _last_edit_time = 0;
 //var userId;
 /*var xhr=new XMLHttpRequest;
 xhr.open("GET","https://diary.hydroxyl-ion.rthe.xyz/",false);
@@ -36,6 +38,42 @@ window.onload = function () {
 		document.getElementById("lgin").style.display = "none";
 		document.getElementsByClassName("glyphicon-log-in1")[0].innerHTML = "欢迎" + AV.User.current().attributes.username + "点击退出登录";
 		User = AV.User.current().attributes.username;
+	}
+}
+
+var _save = document.getElementsByClassName("Save")[0];
+_save.onclick = function(){
+	var _data = {};
+	_data.content = document.getElementById("content").value;
+	_data.title = document.getElementById("title").value;
+	save_time = new Date();
+	_data.time = Number(save_time - load_time) + _last_edit_time;
+	localStorage.setItem("_WriteRec",JSON.stringify(_data));
+	alert("Successfully Saved.");
+}
+
+var _read = document.getElementsByClassName("ReadFromLS")[0];
+_read.onclick = function(){
+	if(ls){
+		alert("Your browser do not support localStorage.\nPlease use a new one like Google Chrome, Microsoft Edge, Firefox, Opera, latest Safari.");
+	}
+	else{
+		var item = localStorage.getItem("_WriteRec");
+		if(item != null){
+			alert("Head information cleared, recover it yourself. -v-");
+			if(confirm("Commit them? All you have written will be cleared without saving.")){
+				item = JSON.parse(item);
+				_last_edit_time = item.time;
+				document.getElementById("last_time").innerHTML = String(_last_edit_time/1000/60) + " 分钟";
+				document.getElementById("content").value = item.content;
+				document.getElementById("title").value = item.title;
+				load_time = new Date();
+				document.getElementById("start_time").innerHTML = load_time;
+			}
+		}
+		else{
+			alert("It seems that you have never saved or had lost the file.\nI'm sorry to hear that.");
+		}
 	}
 }
 

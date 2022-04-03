@@ -160,6 +160,9 @@
 		<p align="left">保存时间:
 			<text id="finish_time"></text>
 		</p>
+		<p align="left">外加时数（上次保存至localStorage时的统计时数）:
+			<text id="last_time"></text>
+		</p>
 		<hr color="grey">
 		<p>
 		<fieldset>
@@ -187,10 +190,10 @@
 				placeholder="正文"></textarea>
 		</div>
 		<div style="margin-top: 1rem">
-			<input type="button" value="Save"
-				style="padding: 5px 10px;background-color: pink;border-radius: 4px;border:0;outline: none;border-color: aqua"
-				onClick="pre_save()"> | <input type="button" value="Send" id="wtf"
-				style="padding: 5px 10px;background-color: pink;border-radius: 4px;border-color: aqua">
+			<input type="button" class="ReadFromLS" value="Read"
+			style="padding: 5px 10px;background-color: pink;border-radius: 4px;border:0;outline: none;border-color: aqua">
+			<input type="button" value="Save" class="Save" style="padding: 5px 10px;background-color: pink;border-radius: 4px;border:0;outline: none;border-color: aqua"> | 
+			<input type="button" value="Send" id="wtf" style="padding: 5px 10px;background-color: pink;border-radius: 4px;border-color: aqua">
 			| <input type="button" value="Preview" class="preview"
 				style="padding: 5px 10px;background-color: pink;border-radius: 4px;border-color: aqua">
 		</div>
