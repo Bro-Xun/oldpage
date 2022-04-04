@@ -62,18 +62,65 @@ _read.onclick = function(){
 		if(item != null){
 			alert("Head information cleared, recover it yourself. -v-");
 			if(confirm("Commit them? All you have written will be cleared without saving.")){
-				item = JSON.parse(item);
-				_last_edit_time = item.time;
-				document.getElementById("last_time").innerHTML = String(_last_edit_time/1000/60) + " 分钟";
-				document.getElementById("content").value = item.content;
-				document.getElementById("title").value = item.title;
-				load_time = new Date();
-				document.getElementById("start_time").innerHTML = load_time;
+				commit(item);
 			}
 		}
 		else{
 			alert("It seems that you have never saved or had lost the file.\nI'm sorry to hear that.");
 		}
+	}
+}
+
+var _out = document.getElementsByClassName("out")[0];
+_out.onclick = function(){
+	if(ls){
+		alert("Your browser do not support localStorage.\nPlease use a new one like Google Chrome, Microsoft Edge, Firefox, Opera, latest Safari.");
+	}
+	else{
+		var item = localStorage.getItem("_WriteRec");
+		if(item != null){
+			var d = {};
+			var datastr = "data:text/json;charset=utf-8," + encodeURIComponent(item);
+			var downloadAnchorNode = document.createElement('a')
+			downloadAnchorNode.setAttribute("href", datastr);
+			downloadAnchorNode.setAttribute("download", JSON.parse(item).title + '_backup.json')
+			downloadAnchorNode.click();
+			downloadAnchorNode.remove();
+		}
+		else{
+			alert("It seems that you have never saved or had lost the file.\nI'm sorry to hear that.");
+		}
+	}
+}
+function commit(item){
+	if(typeof(item) == "string"){
+		item = JSON.parse(item);
+	}
+	_last_edit_time = item.time;
+	document.getElementById("last_time").innerHTML = String(_last_edit_time/1000/60) + " 分钟";
+	document.getElementById("content").value = item.content;
+	document.getElementById("title").value = item.title;
+	load_time = new Date();
+	document.getElementById("start_time").innerHTML = load_time;	
+}
+
+var _rf = document.getElementsByClassName("RF")[0];
+_rf.onclick = function(){
+	var _file = document.getElementsByClassName("file")[0];
+	if (_file.files.length === 0) {
+		alert("Please select a file.");
+	}
+	else{
+		var reader = new FileReader();
+		reader.onload = function(){
+			var _result = reader.result;
+			if(typeof(_result) == "string"){
+				_result = JSON.parse(_result);
+			}
+			console.log(_result);
+			commit(_result);
+		}
+		reader.readAsText(_file.files[0]);
 	}
 }
 
