@@ -299,7 +299,7 @@ wtf.onclick = function () {
 	zone.set('tags', tags);
 	zone.set('forward', f11);
 	zone.set('timestamp', Number(save_time));
-	zone.set('edit_time', Number(save_time - load_time));
+	zone.set('edit_time', Number(save_time - load_time) + _last_edit_time);
 	//zone.set('',);
 	if (AV.User.current() != null) {
 		if (private == true) {
