@@ -40,6 +40,8 @@ window.onload = function () {
 					var request = UsefulRequest.split("=")[1];
 					zone.equalTo('author', request);
 					zone.limit(1000);
+					// 按 createdAt 降序排列
+					zone.descending('createdAt');
 					zone.find().then((det) => {
 						for (var i = 0; i < det.length; i++) {
 							var object = det[i].attributes;
